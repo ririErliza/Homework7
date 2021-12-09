@@ -1,5 +1,7 @@
 
-
+window.onload = function() {
+    createSlot()
+}
 
 
 const createSlot = function() {
@@ -13,11 +15,17 @@ const createSlot = function() {
         newSlotNode.innerText = slotNumber
         newSlotNode.classList.add("slot")
 
+        newSlotNode.addEventListener("click", selectSlot)
+
         bingoContainerNode.appendChild (newSlotNode)
 
     }
 }
 
-window.onload = function() {
-    createSlot()
+const selectSlot = function (e) {
+
+    const clickedSlotNode = e.target
+
+    clickedSlotNode.classList.add("selected")
+
 }
